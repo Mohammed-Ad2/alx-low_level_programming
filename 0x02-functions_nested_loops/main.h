@@ -1,8 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include<stdio.h>
-
 /* here are the prototypes */
 int _putchar(char);
 void print_alphabet(void);
