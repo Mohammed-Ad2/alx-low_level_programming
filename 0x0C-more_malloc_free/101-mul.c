@@ -11,12 +11,32 @@ int is_digit(char *str)
 {
 	while (*str)
 	{
-		if (*str <= '0' || *str >= '9')
+		if (*str < '0' || *str > '9')
 			return (0);
 		str++;
 	}
 
 	return (1);
+}
+
+/**
+ * atoi_checked - Converts a string to an integer with error checking
+ * @str: The string to convert
+ *
+ * Return: The converted integer
+ */
+int atoi_checked(char *str)
+{
+	int result = 0;
+
+	if (!is_digit(str))
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	result = atoi(str);
+	return (result);
 }
 
 /**
@@ -29,6 +49,15 @@ int is_digit(char *str)
 int multiply(int num1, int num2)
 {
 	return (num1 * num2);
+}
+
+/**
+ * print_result - Prints the result of multiplication
+ * @result: The result to print
+ */
+void print_result(int result)
+{
+	printf("%d\n", result);
 }
 
 /**
@@ -48,11 +77,12 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
+	num1 = atoi_checked(argv[1]);
+	num2 = atoi_checked(argv[2]);
 
 	result = multiply(num1, num2);
-	printf("%d\n", result);
+	print_result(result);
 
 	return (0);
 }
+
