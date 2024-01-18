@@ -31,12 +31,7 @@ int atoi_checked(char *str)
 
 	if (!is_digit(str))
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -51,7 +46,7 @@ int atoi_checked(char *str)
  *
  * Return: The result of the multiplication
  */
-int multiply(int num1, int num2)
+long multiply(int num1, int num2)
 {
 	return (num1 * num2);
 }
@@ -62,22 +57,7 @@ int multiply(int num1, int num2)
  */
 void print_result(int result)
 {
-	char buffer[100];
-	int i = 0;
-
-	while (result > 0)
-	{
-		buffer[i] = (result % 10) + '0';
-		result /= 10;
-		i++;
-	}
-
-	while (i > 0)
-	{
-		i--;
-		_putchar(buffer[i]);
-	}
-	_putchar('\n');
+	printf("%d\n", result);
 }
 
 /**
@@ -93,12 +73,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -110,4 +85,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-
