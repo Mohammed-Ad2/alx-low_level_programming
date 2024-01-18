@@ -46,7 +46,7 @@ int atoi_checked(char *str)
  *
  * Return: The result of the multiplication
  */
-int multiply(int num1, int num2)
+long multiply(int num1, int num2)
 {
 	return (num1 * num2);
 }
