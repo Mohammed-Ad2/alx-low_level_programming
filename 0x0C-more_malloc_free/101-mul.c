@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	result = malloc(sizeof(int) * argc);
 
 	result[0] = multiply(num1, num2);
-	printf("%d\n", result);
+	printf("%d\n", *result);
 
 	return (0);
 }
