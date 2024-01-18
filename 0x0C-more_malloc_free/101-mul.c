@@ -40,9 +40,9 @@ int multiply(int num1, int num2)
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int num1, num2, *result;
 
-	if (argc != 3 || (!is_digit(argv[1])) || !(is_digit(argv[2])))
+	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 	{
 		printf("Error\n");
 		exit(98);
@@ -51,7 +51,9 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 
-	result = multiply(num1, num2);
+	result = malloc(sizeof(int) * argc);
+
+	result[0] = multiply(num1, num2);
 	printf("%d\n", result);
 
 	return (0);
