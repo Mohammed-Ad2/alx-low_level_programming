@@ -2,7 +2,7 @@
 
 /**
  * puts_half - Prints half of a string
- *	       if len is odd, n = (len - 1) / 2
+ *	       if len is odd, n = (len + 1) / 2
  * @str: input
  */
 void puts_half(char *str)
