@@ -5,12 +5,12 @@
  * struct op - Struct op
  *
  * @op: The operator
- * @f: The function associated
+ * @f: The associated function.
  */
 typedef struct op
 {
-    char *op;
-    int (*f)(int a, int b);
+	char *op;
+	int (*f)(int a, int b);
 } op_t;
 
 /*Prototypes for functions*/
