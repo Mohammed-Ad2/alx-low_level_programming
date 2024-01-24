@@ -13,6 +13,13 @@
  */
 int (*get_op_func(char *s))(int, int)
 {
+	/**
+	* op_t - Structure representing an arithmetic operation
+	*	 and its associated function.
+	*
+	* @op: The operator string.
+	* @f: Pointer to the corresponding arithmetic operation function.
+	*/
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
