@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <stddef.h>
 
 /**
  * get_op_func - Returns a function pointer to the corresponding
