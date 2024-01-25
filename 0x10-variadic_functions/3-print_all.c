@@ -53,7 +53,7 @@ void print_string(va_list *args)
 
 	if (spec == NULL)
 	{
-		printf("nil");
+		printf("(nil)");
 		return;
 	}
 	printf("%s", spec);
@@ -78,8 +78,7 @@ void print_all(const char * const format, ...)
 		{'\0', NULL},
 	};
 
-	int i = 0;
-	int j = 0;
+	int i = 0, j = 0;
 	const char *seperator = "";
 	va_list args;
 
