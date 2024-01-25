@@ -79,7 +79,7 @@ void print_all(const char * const format, ...)
 	};
 
 	int i = 0, j = 0;
-	const char *seperator = "";
+	const char *separator = "";
 	va_list args;
 
 	va_start(args, format);
@@ -91,9 +91,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == f[j].spec)
 			{
-				printf("%s", seperator);
+				printf("%s", separator);
 				f[j].print(&args);
-				seperator = ", ";
+				separator = ", ";
 				break;
 			}
 			j++;
