@@ -87,7 +87,7 @@ void print_all(const char * const format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0;
-		while (f[j].spec)
+		while (f[j].spec != '\0')
 		{
 			if (format[i] == f[j].spec)
 			{
