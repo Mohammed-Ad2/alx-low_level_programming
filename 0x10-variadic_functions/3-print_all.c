@@ -52,9 +52,11 @@ void print_string(va_list *args)
 	char *spec = va_arg(*args, char *);
 
 	if (spec == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", spec);
+		return;
+	}
+	printf("%s", spec);
 }
 
 /**
