@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_numbers - Print strings
+ * print_strings - Print strings
  *
  * @separator: The string to be printed between the strings
  * @n: The number of strings passed to the function
@@ -12,13 +12,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list str;
-	char *current_str;
+	const char *current_str;
 
 	va_start(str, n);
 
 	for (i = 0; i < n; i++)
 	{
-		current_str = va_arg(str, char *);
+		current_str = va_arg(str, const char *);
 
 		if (current_str == NULL)
 			printf("(nil)");
