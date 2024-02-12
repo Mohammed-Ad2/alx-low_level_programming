@@ -20,14 +20,11 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content != NULL)
-	{
-		rwr = write(fd, text_content, strlen(text_content));
-		if (rwr == -1)
-		{
-			close(fd);
-			return (-1);
-		}
-	}
+		text_content = "";
+
+	rwr = write(fd, text_content, strlen(text_content));
+	if (rwr == -1)
+		return (-1);
 
 	close(fd);
 	return (1);
