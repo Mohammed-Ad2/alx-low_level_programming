@@ -25,12 +25,11 @@ void close_file(int fd);
  */
 void validate_elf_file(unsigned char *magic_numbers)
 {
-	for (int i = 0; i < 4; i++)
+	int i;
+
+	for (i = 0; i < 4; i++)
 	{
-		if (magic_numbers[i] != 127 &&
-			magic_numbers[i] != 'E' &&
-			magic_numbers[i] != 'L' &&
-			magic_numbers[i] != 'F')
+		if (magic_numbers[i] != 127 && magic_numbers[i] != 'E' && magic_numbers[i] != 'L' && magic_numbers[i] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
@@ -46,9 +45,11 @@ void validate_elf_file(unsigned char *magic_numbers)
  */
 void display_magic_numbers(unsigned char *magic_numbers)
 {
+	int i;
+
 	printf("  Magic:   ");
 
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x", magic_numbers[i]);
 
