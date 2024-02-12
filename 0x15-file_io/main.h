@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <string.h>
 
 #define PERMISSIONS (S_IRUSR | S_IWUSR)
 
