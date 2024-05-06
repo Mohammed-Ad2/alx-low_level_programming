@@ -14,9 +14,9 @@ void print_all(const char * const format, ...);
  * @args: A pointer to va_list containing the character
  *	  to be printed.
  */
-void print_char(va_list *args)
+void print_char(va_list args)
 {
-	printf("%c", va_arg(*args, int));
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -24,9 +24,9 @@ void print_char(va_list *args)
  *
  * @args: A pointer to va_list containing the integer to be printed.
  */
-void print_int(va_list *args)
+void print_int(va_list args)
 {
-	printf("%d", va_arg(*args, int));
+	printf("%d", va_arg(args, int));
 }
 
 
@@ -36,9 +36,9 @@ void print_int(va_list *args)
  * @args: A pointer to va_list containing the floating-point
  *	  number to be printed.
  */
-void print_float(va_list *args)
+void print_float(va_list args)
 {
-	printf("%f", va_arg(*args, double));
+	printf("%f", va_arg(args, double));
 }
 
 /**
@@ -47,9 +47,9 @@ void print_float(va_list *args)
  * @args: A pointer to va_list containing the string to be printed.
  *        If the string is NULL, "(nil)" is printed instead.
  */
-void print_string(va_list *args)
+void print_string(va_list args)
 {
-	char *spec = va_arg(*args, char *);
+	char *spec = va_arg(args, char *);
 
 	if (spec == NULL)
 	{
@@ -92,7 +92,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == f[j].spec)
 			{
 				printf("%s", separator);
-				f[j].print(&args);
+				f[j].print(args);
 				separator = ", ";
 				break;
 			}

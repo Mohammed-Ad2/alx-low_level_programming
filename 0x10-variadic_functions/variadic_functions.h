@@ -12,7 +12,7 @@
 typedef struct formatter
 {
 	char spec;
-	void (*print)(va_list *);
+	void (*print)(va_list);
 } fmt;
 
 int sum_them_all(const unsigned int n, ...);
